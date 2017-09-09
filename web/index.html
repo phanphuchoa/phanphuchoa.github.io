@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html ng-app="scotchApp" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/detail.css">
+
+</head>
+
+<body ng-controller="mainController">
+    <header>
+        <div class="container-fluid">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 header-left">
+                        <div class="logo">
+                            <img src="img/logo.png" alt="" class="responsive" id="logo">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6 header-right">
+                        <div class="social">
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="https://soundcloud.com/" target="_blank">
+                                <i class="fa fa-soundcloud"></i>
+                            </a>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="https://www.twitter.com/" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href=".search" data-toggle="collapse"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                            <form class="search collapse">
+                                <input type="text" ng-model="keySearch" name=""><a href="#search/{{keySearch}}" type="submit" class="my-button"><b>Go !</b></a>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar ">
+        <div class="container-fluid menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12 main-menu">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>                        
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse " id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">HOME</a></li>
+
+
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li ng-repeat=" x in categories"><a href="#categories/{{x._id}}">{{x.name}}</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="admin">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="admin-t.html">ADMIN</a></li>
+                                    <li>
+                                        <a href="login.html">LOGIN</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div ng-init="init()">
+        <div ng-view></div>
+    </div>
+    <!-- Content footer -->
+    <div class="container-fluid content-footer">
+        <div class="container">
+            <div class="row">
+                <!-- row1 -->
+                <div class="col-sm-12 col-md-4 col-lg-4 content-footer-row">
+                    <div class="content-footer-header">
+                        <h3>Popular Posts</h3>
+                    </div>
+                    <!-- post1 -->
+                    <div class="content-footer-detail">
+                        <div class="content-footer-detail-img">
+                            <a href="#detail/{{popularArticles[0]._id}}">
+                                <img src="{{popularArticles[0].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{popularArticles[0]._id}}">
+                                <h4>{{popularArticles[0].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post1 -->
+                    <!-- post1 -->
+                    <div div class="content-footer-detail end-post ">
+                        <div class="content-footer-detail-img">
+                            <a href="#detail/{{popularArticles[1]._id}}">
+                                <img src="{{popularArticles[1].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{popularArticles[1]._id}}">
+                                <h4>{{popularArticles[1].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post1 -->
+                    <!-- post1 -->
+                    <div div class="content-footer-detail end-post ">
+                        <div class="content-footer-detail-img">
+                            <a href="#detail/{{popularArticles[2]._id}}">
+                                <img src="{{popularArticles[2].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{popularArticles[2]._id}}">
+                                <h4>{{popularArticles[2].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post1 -->
+                </div>
+                <!-- end row1 -->
+                <!-- row2 -->
+                <div class="col-sm-12 col-md-4 col-lg-4 content-footer-row ">
+                    <div class="content-footer-header ">
+                        <h3>Random Posts</h3>
+                    </div>
+                    <!-- post2 -->
+                    <div class="content-footer-detail ">
+                        <div class="content-footer-detail-img ">
+                            <a href="#detail/{{randomArticles[0]._id}}">
+                                <img src="{{randomArticles[0].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{randomArticles[0]._id}}">
+                                <h4>{{randomArticles[0].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post2 -->
+                    <!-- post2 -->
+                    <div class="content-footer-detail end-post ">
+                        <div class="content-footer-detail-img ">
+                            <a href="#detail/{{randomArticles[1]._id}}">
+                                <img src="{{randomArticles[1].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{randomArticles[1]._id}}">
+                                <h4>{{randomArticles[1].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post2 -->
+                    <!-- post2 -->
+                    <div class="content-footer-detail end-post ">
+                        <div class="content-footer-detail-img ">
+                            <a href="#detail/{{randomArticles[2]._id}}">
+                                <img src="{{randomArticles[2].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{randomArticles[2]._id}}">
+                                <h4>{{randomArticles[2].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post2 -->
+                </div>
+                <!-- end row2 -->
+                <!-- row3 -->
+                <div class="col-sm-12 col-md-4 col-lg-4 content-footer-row ">
+                    <div class="content-footer-header ">
+                        <h3>Most Comments</h3>
+                    </div>
+                    <!-- post3 -->
+                    <div class="content-footer-detail ">
+                        <div class="content-footer-detail-img ">
+                            <a href="#detail/{{mostCommentsArticles[0]._id}}">
+                                <img src="{{mostCommentsArticles[0].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{mostCommentsArticles[0]._id}}">
+                                <h4>{{mostCommentsArticles[0].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post3 -->
+                    <!-- post3 -->
+                    <div class="content-footer-detail end-post ">
+                        <div class="content-footer-detail-img ">
+                            <a href="#detail/{{mostCommentsArticles[1]._id}}">
+                                <img src="{{mostCommentsArticles[1].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{mostCommentsArticles[1]._id}}">
+                                <h4>{{mostCommentsArticles[1].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post3 -->
+                    <!-- post3 -->
+                    <div class="content-footer-detail end-post ">
+                        <div class="content-footer-detail-img ">
+                            <a href="#detail/{{mostCommentsArticles[2]._id}}">
+                                <img src="{{mostCommentsArticles[2].media}}" alt=" " class="portrait">
+                            </a>
+                        </div>
+                        <div class="content-footer-detail-post ">
+                            <a href="#detail/{{mostCommentsArticles[2]._id}}">
+                                <h4>{{mostCommentsArticles[2].title}}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end post3 -->
+                </div>
+                <!-- end row3 -->
+            </div>
+        </div>
+    </div>
+    <!-- End Content footer -->
+    <div class="container-fluid footer ">
+        <div calss="container ">
+            <div class="row ">
+                <div class="col0-sm-12 col-md-12 col-lg-12 ">
+                    <footer>
+                        Copyright by PPH 2017
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="/bower_components/angular/angular.js "></script>
+<script src="/bower_components/angular-route/angular-route.js "></script>
+<script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+<script src="/bower_components/angular-sanitize/angular-sanitize.js "></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="script/index-app.js "></script>
+
+</html>

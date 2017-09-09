@@ -1,0 +1,49 @@
+<div ng-init="getArticleBySearchKey()" class="container middle-content">
+    <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+            <!-- post 1 -->
+            <div ng-repeat="x in articleGetByKey" class="row post">
+                <div class="col-sm-12 col-md-6 col-lg-6 post-left">
+                    <div class="post-img  ">
+                        <a href="#detail/{{x._id}}">
+
+                            <div class="m-thumbnail">
+                                <img ng-src="{{x.media}}" alt="" class="portrait">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 post-right">
+                    <div class="post-detail">
+                        <h3>
+                            <a href="#detail/{{x._id}}">{{x.title |limitTo : 55}}...</a>
+                        </h3>
+                        <div class="post-detail-bot">
+                            <div lass="post-detail-bot-time">
+                                <p class="author"><b>{{x._author.name}}</b> {{x.createdDate | date:'dd-MM-yyyy'}}</p>
+                            </div>
+                            <div class="post-detail-bot-content">
+                                <p>{{x.description |limitTo : 110}}...</p>
+                            </div>
+                            <div class="post-read-more">
+                                <span class=""><a class="button-read-more" c> Read More</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" items-per-page="itemsPerPage" boundary-links="true" force-ellipses="true">jkj</ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- side -->
+    <div class="col-sm-12 col-md-3 col-lg-3"></div>
+</div>
+</div>
+</div>

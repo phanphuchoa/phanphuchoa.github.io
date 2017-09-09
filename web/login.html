@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="scotchApp" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body ng-controller="mainController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Login</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form ng-submit="login()" accept-charset="UTF-8" role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" ng-model="user.email" placeholder="yourmail@example.com" name="email" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input ng-model="user.password" class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+			    	    	</label>
+                                </div>
+                                <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+                            </fieldset>
+                        </form>
+                        <hr/>
+                        <!--<center>
+                            <h4>OR</h4>
+                        </center>-->
+                        <!--<input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook">-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="/bower_components/angular/angular.js "></script>
+<script src="/bower_components/angular-route/angular-route.js "></script>
+<script src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+<script src="/bower_components/angular-sanitize/angular-sanitize.js "></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="script/index-app.js "></script>
+
+</html>

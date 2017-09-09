@@ -1,0 +1,127 @@
+<div ng-init="getArticleID()" class="container-fluid main-detail">
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 main-detail-content detail-custom">
+                <div class="content">
+                    <h1>{{article.title}}</h1>
+                    <p><a href="#">{{article.createdDate | date: 'MMM d, y'}}</a></p>
+                    <img ng-src="{{article.media}}" alt="">
+                    <div class="post-content">
+                        <p ng-bind-html="article.content">
+                        </p>
+                    </div>
+
+                </div>
+                <!--relate posts-->
+                <div class="related-post">
+                    <div class="related-post-head">
+                        <h4>RELATED POSTS</h4>
+                    </div>
+                    <div class="row related-post-main">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="related-post-main-img">
+                                <a href="#detail/{{allArticles[0]._id}}">
+                                    <img src="{{allArticles[0].media}}" alt="" class="portrait ">
+                                </a>
+                            </div>
+                            <div class="related-post-main-content">
+                                <a href="#detail/{{allArticles[0]._id}}">
+                                    <h4>{{allArticles[0].title}}</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="related-post-main-img">
+                                <a href="#detail/{{allArticles[1]._id}}">
+                                    <img src="{{allArticles[1].media}}" alt="" class="portrait ">
+                                </a>
+                            </div>
+                            <div class="related-post-main-content">
+                                <a href="#detail/{{allArticles[1]._id}}">
+                                    <h4>{{allArticles[1].title}}</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <div class="related-post-main-img">
+                                <a href="#detail/{{allArticles[2]._id}}">
+                                    <img src="{{allArticles[2].media}}" alt="" class="portrait ">
+                                </a>
+                            </div>
+                            <div class="related-post-main-content">
+                                <a href="#detail/{{allArticles[2]._id}}">
+                                    <h4>{{allArticles[2].title}}</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <!-- side -->
+            <div class="col-sm-12 col-md-4 col-lg-4 main-detail-content">
+                <!-- follow -->
+                <div class="row follow">
+                    <div class="col-sm-12 col-md-12 col-lg-12 follow-content">
+                        <div class=>
+                            <div class="follow-header">
+                                <h3>Follow Us</h3>
+                            </div>
+                            <div class="">
+                                <div>
+                                    <div class="follow-content-social youtube">
+                                        <a href="https://www.youtube.com/" target="_blank" class="follow-content-icon">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                        <span class="follow-content-count">
+									
+								</span>
+                                        <span class="follow-content-item">
+									SUBSCRIBERS ON YOUTUBE
+								</span>
+                                    </div>
+                                    <div class="follow-content-social facebook ">
+                                        <a href="https://www.facebook.com/" target="_blank" class="follow-content-icon follow-content-icon-facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <span class="follow-content-count">
+									
+								</span>
+                                        <span class="follow-content-item">
+									FOLLOW ON FACEBOOK
+								</span>
+                                    </div>
+                                    <div class="follow-content-social twitter">
+                                        <a href="https://www.twitter.com/" target="_blank" class="follow-content-icon follow-content-icon-twitter">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <span class="follow-content-count">
+									
+								</span>
+                                        <span class="follow-content-item">
+									FOLLOW ON TWITTER
+								</span>
+                                    </div>
+                                    <div class="follow-content-social soundcloud">
+                                        <a href="https://www.soundcloud.com/" target="_blank" class="follow-content-icon follow-content-icon-soundcloud">
+                                            <i class="fa fa-soundcloud"></i>
+                                        </a>
+                                        <span class="follow-content-count">
+									
+								</span>
+                                        <span class="follow-content-item">
+									FOLLOW ON SOUNDCLOUD
+								</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end follow -->
+            </div>
+            <!-- end side -->
+        </div>
+    </div>
+</div>
